@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      body {
+        height: 100vh;
+        background: #f0f0ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #container {
+        padding: 44px 24px;
+        border: 1px solid #f8f8ff;
+        background: #fefeff;
+        border-radius: 10px;
+      }
+      #value {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      #ageInput, #countryInput {
+        font-size: 20px;
+        padding: 10px 15px;
+        width: 300px;
+        border: 2px solid #f0f0ff;
+        outline: none;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+      #ageInput:hover, #countryInput:hover {
+        box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.2);
+      }
+      #ageInput:focus, #countryInput:focus {
+        border-color: #6666ff;
+      }
+    </style>
+    <title>Score</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="countryValue">Enter country</h1>
+      <h1 id="ageValue">Enter your age</h1>
+      <input
+        type="text"
+        oninput="updateLicence()"
+        id="countryInput"
+        placeholder="Enter country..."
+      />
+
+      <input
+        type="number"
+        oninput="updateLicence()"
+        id="ageInput"
+        placeholder="Enter your age..."
+      />
+    </div>
+
+    <script>
+      function updateLicence() {
+        const countryInput = document.getElementById("countryInput").value;
+        const countryOutput = document.getElementById("countryValue");
+
+        const ageInput = document.getElementById("ageInput").value;
+        const ageOutput = document.getElementById("ageValue");
+
+        if (countryInput == "Nigeria") {
+          countryOutput.textContent = "You're Nigerian"
+          if (ageInput >= 18) {
+            ageOutput.textContent = "You can drive"
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

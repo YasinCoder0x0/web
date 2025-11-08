@@ -23,11 +23,11 @@
         background: #fefeff;
         border-radius: 10px;
       }
-      #value {
+      #scoreValue {
         font-size: 24px;
         margin-bottom: 20px;
       }
-      #input {
+      #scoreInput {
         font-size: 20px;
         padding: 10px 15px;
         width: 300px;
@@ -36,10 +36,10 @@
         border-radius: 10px;
         transition: all 0.3s ease;
       }
-      #input:hover {
+      #scoreInput:hover {
         box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.2);
       }
-      #input:focus {
+      #scoreInput:focus {
         border-color: #6666ff;
       }
     </style>
@@ -47,62 +47,45 @@
   </head>
   <body>
     <div id="container">
-      <h1 id="countryValue">Enter country</h1>
-      <h1 id="ageValue">Enter country</h1>
-      <input
-        type="text"
-        oninput="updateLicence()"
-        id="countryInput"
-        placeholder="Enter country..."
-      />
+      <h1 id="scoreValue">Enter score</h1>
 
       <input
         type="number"
-        oninput="updateLicence()"
-        id="ageInput"
+        oninput="updateScore()"
+        id="scoreInput"
         placeholder="Enter your age..."
       />
     </div>
 
     <script>
-      function updateLicence() {
-        const countryInput = document.getElementById("countryInput").value;
-        const countryOutput = document.getElementById("countryValue");
-
-        const ageInput = document.getElementById("ageInput").value;
-        const ageOutput = document.getElementById("ageValue");
-
-        if (countryInput == "Nigeria") {
-          countryOutput.textContent = "You're Nigerian"
-          if (ageInput >= 18) {
-            ageOutput.textContent = "You can drive"
-          }
-        }
+      function updateScore() {
+        const input = document.getElementById("scoreInput").value;
+        const output = document.getElementById("scoreValue");
 
         /*#### Update score conditional statement ####*/
-        // if (input >= 75 && input <= 100) {
-        //   output.textContent = "A";
-        // } else if (input >= 65 && input <= 74) {
-        //   output.textContent = "B";
-        // } else if (input >= 55 && input <= 64) {
-        //   output.textContent = "C";
-        // } else if (input >= 45 && input <= 54) {
-        //   output.textContent = "D"
-        // } else if (input >= 35 && input <= 44) {
-        //   output.textContent = "E";
-        // } else if (input >= 25 && input <= 34) {
-        //   output.textContent = "F";
-        // } else if (input >= 1 && input <= 24) {
-        //   output.textContent = "Absent";
-        // } else if (input == 0) {
-        //   output.textContent = "Enter score";
-        // } else if (input > 100) {
-        //   output.textContent = "Score cannot be over 100";
-        // } else if (input < 0) {
-        //   output.textContent = "Score cannot be a negative number";
-        // } else {
-        //   output.textContent = "Invalid input"
-        // }
+        if (input >= 75 && input <= 100) {
+          output.textContent = "A";
+        } else if (input >= 65 && input <= 74) {
+          output.textContent = "B";
+        } else if (input >= 55 && input <= 64) {
+          output.textContent = "C";
+        } else if (input >= 45 && input <= 54) {
+          output.textContent = "D"
+        } else if (input >= 35 && input <= 44) {
+          output.textContent = "E";
+        } else if (input >= 25 && input <= 34) {
+          output.textContent = "F";
+        } else if (input >= 1 && input <= 24) {
+          output.textContent = "Absent";
+        } else if (input == 0) {
+          output.textContent = "Enter score";
+        } else if (input > 100) {
+          output.textContent = "Score cannot be over 100";
+        } else if (input < 0) {
+          output.textContent = "Score cannot be a negative number";
+        } else {
+          output.textContent = "Invalid input"
+        }
       }
     </script>
   </body>
