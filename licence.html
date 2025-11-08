@@ -66,12 +66,10 @@
 
     <script>
       function updateLicence() {
-        const countryInput = document.getElementById("countryInput").value;
-        const countryOutput = document.getElementById("countryValue");
-
         const ageInput = document.getElementById("ageInput").value;
         const ageOutput = document.getElementById("ageValue");
 
+        /*#### Update licence conditional statement ####*/
         if (countryInput == "Nigeria") {
           countryOutput.textContent = "You're Nigerian"
           if (ageInput >= 18) {
